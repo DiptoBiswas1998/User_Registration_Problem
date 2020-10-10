@@ -9,6 +9,7 @@ namespace User_Registration_Problem
         private static readonly string Regex_FirstName = "^[A-Z]{1}[a-z]{2,}$";
         private static readonly string Regex_LastName = "^[A-Z]{1}[a-z]{2,}$";
         private static readonly string Regex_Email = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+        private static readonly string Regex_MobileNo = "^[1-9]{1}[0-9]{1,2}[ ][1-9]{1}[0-9]{9}$";
         public bool ValidateFirstName(string FN)
         {
             return Regex.IsMatch(FN, Regex_FirstName);
@@ -21,15 +22,19 @@ namespace User_Registration_Problem
         {
             return Regex.IsMatch(Email, Regex_Email);
         }
+        public bool ValidateMobileNo(string MobileNo)
+        {
+            return Regex.IsMatch(MobileNo, Regex_MobileNo);
+        }
         public void PrintResult(bool result)
         {
             if (result)
             {
-                Console.WriteLine("Valid input");
+                Console.WriteLine("Valid.");
             }
             else
             {
-                Console.WriteLine("Invalid input");
+                Console.WriteLine("Invalid.");
             }
         }
     }
