@@ -8,10 +8,14 @@ namespace User_Registration_Problem
             //Welcome msg
             Console.WriteLine("Welcome to the User Registration Problem!");
             ValidateUserRegistration validateUserRegistration = new ValidateUserRegistration();
-            Console.WriteLine("Enter your first name: ");
+            Console.WriteLine("Enter your first name : ");
             string firstName = Console.ReadLine();
             bool firstNameResult = validateUserRegistration.ValidateFirstName(firstName);
             validateUserRegistration.PrintResult(firstNameResult);
+            Console.WriteLine("Enter your last name : ");
+            string lastName = Console.ReadLine();
+            bool lastNameResult = validateUserRegistration.ValidateLastName(lastName);
+            validateUserRegistration.PrintResult(lastNameResult);
         }
     }
 }
