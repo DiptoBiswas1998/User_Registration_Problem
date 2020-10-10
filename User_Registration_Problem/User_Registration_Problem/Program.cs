@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace User_Registration_Problem
 {
     class Program
