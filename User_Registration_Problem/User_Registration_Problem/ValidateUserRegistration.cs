@@ -25,11 +25,11 @@ namespace User_Registration_Problem
         {
             if (result)
             {
-                Console.WriteLine("Valid.");
+                Console.WriteLine("Valid input");
             }
             else
             {
-                Console.WriteLine("Invalid.");
+                Console.WriteLine("Invalid input");
             }
         }
     }
