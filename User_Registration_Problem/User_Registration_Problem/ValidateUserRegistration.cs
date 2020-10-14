@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 namespace User_Registration_Problem
 {
-    class ValidateUserRegistration
+    public class ValidateUserRegistration
     {
         private List<string> sampleMails = new List<string>()
         {
