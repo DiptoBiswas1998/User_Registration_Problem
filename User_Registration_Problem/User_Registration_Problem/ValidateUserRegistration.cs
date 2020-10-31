@@ -10,7 +10,6 @@ namespace User_Registration_Problem
         {
             "abc@yahoo.com",
             "abc-100@yahoo.com",
-            "abc-100@yahoo.com",
             "abc.100@yahoo.com",
             "abc111@abc.com",
             "abc-100@abc.net",
@@ -19,12 +18,12 @@ namespace User_Registration_Problem
             "abc@gmail.com.com",
             "abc+100@gmail.com"
         };
-        private static readonly string Regex_FirstName = "^[A-Z]{1}[a-z]{2,}$";
-        private static readonly string Regex_LastName = "^[A-Z]{1}[a-z]{2,}$";
-        private static readonly string Regex_Email = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
-        private static readonly string Regex_MobileNo = "^[1-9]{1}[0-9]{1,2}[ ][1-9]{1}[0-9]{9}$";
-        private static readonly string Regex_Password = "^(?=.*[0-9])(?=.*[A-Z])(?=[^!@#$%&+-.]*[!@#$%&+-.][^!@#$%&+-.]*$)[\\S]{8,}$";
-        private static readonly string Regex_Email2 = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+        private static string Regex_FirstName = "^[A-Z]{1}[a-z]{2,}$";
+        private static string Regex_LastName = "^[A-Z]{1}[a-z]{2,}$";
+        private static string Regex_Email = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
+        private static string Regex_MobileNo = "^[1-9]{1}[0-9]{1,2}[ ][1-9]{1}[0-9]{9}$";
+        private static string Regex_Password = "^(?=.*[0-9])(?=.*[A-Z])(?=[^!@#$%&+-.]*[!@#$%&+-.][^!@#$%&+-.]*$)[\\S]{8,}$";
+        private static string Regex_Email2 = "^[0-9a-zA-Z]{1,}([._+-][0-9a-zA-Z]{0,})*[@][0-9a-zA-Z]{1,}.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
         public bool ValidateFirstName(string FN)
         {
             return Regex.IsMatch(FN, Regex_FirstName);

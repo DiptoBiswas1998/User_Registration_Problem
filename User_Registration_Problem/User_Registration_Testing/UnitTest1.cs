@@ -6,15 +6,14 @@ namespace User_Registration_Testing
     public class UnitTest1
     {
         //Happy Test Cases(Test Cases Pass The Entries)
-        [DataRow("Dipto")]
         [TestMethod]
-        public void GivenUserFistName_WhenValidate_ShouldReturnTrue(string msg)
+        public void GivenUserFistName_WhenValidate_ShouldReturnTrue()
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            //string firstName = "Dipto";
+            string firstName = "Dipto";
             //Act
-            bool result = user.ValidateFirstName(msg);
+            bool result = user.ValidateFirstName(firstName);
             //Assert
             Assert.IsTrue(result);
         }
@@ -25,7 +24,7 @@ namespace User_Registration_Testing
             ValidateUserRegistration user = new ValidateUserRegistration();
             string lastName = "Biswas";
             //Act
-            bool result = user.ValidateLastName(lastName);
+            bool result = user.ValidateFirstName(lastName);
             //Assert
             Assert.IsTrue(result);
         }
@@ -34,7 +33,7 @@ namespace User_Registration_Testing
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            string email = "diptobiswas1998@gmail.com";
+            string email = "diptobiswas@gmail.com";
             //Act
             bool result = user.ValidateEmail(email);
             //Assert
@@ -56,7 +55,7 @@ namespace User_Registration_Testing
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            string password = "Dipto@1998";
+            string password = "Dipto@13579";
             //Act
             bool result = user.ValidatePassword(password);
             //Assert
@@ -68,7 +67,7 @@ namespace User_Registration_Testing
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            string firstName = "dipto";
+            string firstName = "Dipto";
             //Act
             bool result = user.ValidateFirstName(firstName);
             //Assert
@@ -79,9 +78,9 @@ namespace User_Registration_Testing
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            string lastName = "biswas";
+            string lastName = "Biswas";
             //Act
-            bool result = user.ValidateLastName(lastName);
+            bool result = user.ValidateFirstName(lastName);
             //Assert
             Assert.IsFalse(result);
         }
@@ -90,7 +89,7 @@ namespace User_Registration_Testing
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            string email = "diptobiswas1998";
+            string email = "dipto.biswas@gmail.com";
             //Act
             bool result = user.ValidateEmail(email);
             //Assert
@@ -101,7 +100,7 @@ namespace User_Registration_Testing
         {
             //Arrange
             ValidateUserRegistration user = new ValidateUserRegistration();
-            string mobileNumber = "91 0123456789";
+            string mobileNumber = "91 9876543210";
             //Act
             bool result = user.ValidateMobileNo(mobileNumber);
             //Assert
@@ -111,12 +110,30 @@ namespace User_Registration_Testing
         public void GivenPassword_WhenValidate_ShouldReturnFalse()
         {
             //Arrange
-            ValidateUserRegistration user = new ValidateUserRegistration();
-            string password = "dipto@1998";
+            ValidateUserRegistration user = new ValidateUserRegistration(); string password = "pqwert@123";
             //Act
             bool result = user.ValidatePassword(password);
             //Assert
             Assert.IsFalse(result);
+        }
+        [TestMethod]
+        [DataRow("abc@yahoo.com")]
+        [DataRow("abc-100@yahoo.com")]
+        [DataRow("abc.100@yahoo.com")]
+        [DataRow("abc111@abc.com")]
+        [DataRow("abc.100@abc.com.au")]
+        [DataRow("abc-100@abc.net")]
+        [DataRow("abc@1.com")]
+        [DataRow("abc@gmail.com.com")]
+        [DataRow("abc+100@gmail.com")]
+        public void GivenEmailIds_WhenValidate_ShouldReturnTrue(string email)
+        {
+            //Arrange
+            ValidateUserRegistration user = new ValidateUserRegistration();
+            //Act
+            bool result = user.ValidateEmail2(email);
+            //Assert
+            Assert.IsTrue(result);
         }
     }
 }
